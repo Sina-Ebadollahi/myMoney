@@ -1,0 +1,53 @@
+.loginContainer {
+  min-height: 90vh;
+  background: url("../../assets/images/pexels-pixmike-413195.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginContainer form {
+  padding: 5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 20px black;
+  border-radius: 2rem;
+  background-color: rgb(223, 213, 223);
+  opacity: 0.95;
+}
+
+.loginContainer form div h1 {
+  font-size: 3rem;
+}
+.headerContainer {
+  align-self: flex-start;
+  flex: 1 1 20rem;
+}
+.loginContainer form button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: rgb(148, 54, 148);
+  border: none;
+  border-radius: 0.7rem;
+}
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.auth-container label {
+  margin: 1rem;
+  font-size: 1rem;
+}
+.auth-container label input {
+  padding: 0.8rem;
+}
+.login-submit {
+  cursor: pointer;
+}
