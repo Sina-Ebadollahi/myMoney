@@ -29,9 +29,13 @@ export default function Navbar() {
             <ul>
                 <li className={styles.title}>ShoppingTracker</li>
                 <li>
-                    <Link to="/login">Login</Link>
-                    <Link to="/signup">signup</Link>
-                    {user && <h1>{user}</h1>}
+                    {!user && (
+                    <>
+                        <Link to="/login">Login</Link>
+                        <Link to="/signup">signup</Link>
+                    </>
+                    )}
+                    {user && <h1>hello, {user}</h1>}
                 </li>
                 {isLoggedIn() && <li>
                     <button onClick={() => logginOut()}>
