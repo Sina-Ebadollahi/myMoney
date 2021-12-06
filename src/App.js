@@ -7,24 +7,20 @@ import Login from "./pages/login/Login";
 import Notfound from "./pages/notfound/Notfound";
 import Navbar from "./components/Navbar/Navbar";
 // hooks
-import UseAuth from "./hooks/UseAuth";
 
 function App() {
   // navigation
-  const { authIsReady } = UseAuth();
   return (
     <div className="App">
-      {authIsReady && (
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="*" element={<Notfound />} />
-          </Routes>
-        </Router>
-      )}
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="*" element={<Notfound />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
