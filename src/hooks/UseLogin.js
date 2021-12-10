@@ -17,7 +17,7 @@ export default function UseLogin() {
         throw new Error("Could not login right now!");
       }
       if (loginResponse) {
-        dispatch({ type: "LOGIN", payload: loginResponse.user.displayName });
+        dispatch({ type: "LOGIN", payload: loginResponse.user });
       }
       if (!isCancelled) {
         setWaiting(false);

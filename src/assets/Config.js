@@ -2,7 +2,12 @@ import firebase from "firebase";
 import "firebase/firestore";
 import "firebase/auth";
 const firebaseConfig = {
-  // config
+  apiKey: "AIzaSyCHvBMMGtHDKY6tCNijs1ZNOfT1t_WEh8E",
+  authDomain: "mymoney-e0ca8.firebaseapp.com",
+  projectId: "mymoney-e0ca8",
+  storageBucket: "mymoney-e0ca8.appspot.com",
+  messagingSenderId: "233520614733",
+  appId: "1:233520614733:web:897145f99e688afb653b04",
 };
 
 // initializing the firebase
@@ -11,5 +16,7 @@ firebase.initializeApp(firebaseConfig);
 const projectFireStore = firebase.firestore();
 // initializing the firebase authentication
 const projectAuth = firebase.auth();
+// firebase Timestamp
+const timeStamp = firebase.firestore.Timestamp;
 
-export { projectFireStore, projectAuth };
+export { projectFireStore, projectAuth, timeStamp };

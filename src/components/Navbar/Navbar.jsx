@@ -35,7 +35,7 @@ export default function Navbar() {
                         <Link to="/signup">signup</Link>
                     </>
                     )}
-                    {user && <h1>hello, {user}</h1>}
+                    {user && <h1>hello, {user.displayName}</h1>}
                 </li>
                 {isLoggedIn() && <li>
                     <button onClick={() => logginOut()}>

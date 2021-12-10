@@ -29,7 +29,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     // is user still authenticated?
     const unsub = projectAuth.onAuthStateChanged((user) => {
-      dispatch({ type: "AUTH_IS_READY", payload: user.displayName });
+      dispatch({ type: "AUTH_IS_READY", payload: user });
       // unubbing
       unsub();
     });
