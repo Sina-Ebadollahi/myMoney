@@ -10,12 +10,15 @@ import { UseCollection } from '../../hooks/UseCollection';
 
 
 export default function home() {
-    const { user } = UseAuth();
+    const { user, error:authError } = UseAuth();
+    console.log(`authError : ${authError}`);
+    console.log(authError);
     const{  getData, error } = UseCollection(
         'transactions',
         ["uid","==",user.uid],
         ['createdAt','asc']
-    )
+        )
+        console.log(`user : ${user}, error : ${authError}, getData : ${getData}`);
     return (
         <div className={styles.container}>
             <div className={styles.content}>

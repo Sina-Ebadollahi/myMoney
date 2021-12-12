@@ -54,8 +54,9 @@ export const UseFirestore = (collection) => {
     }
   };
   // delete document from firestore
-  const deleteDocumentFromFireStore = (id) => {
-    fireStoreRefrence.doc().delete();
+  const deleteDocumentFromFireStore = async (id) => {
+    await fireStoreRefrence.doc(id).delete();
+    console.log("delete Completed");
   };
   useEffect(() => {
     return () => {
