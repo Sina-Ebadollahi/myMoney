@@ -13,9 +13,10 @@ export default function home() {
     const { user, error:authError } = UseAuth();
     console.log(`authError : ${authError}`);
     console.log(authError);
+    const _query = user ? ["uid","==",user.uid] : null;
     const{  getData, error } = UseCollection(
         'transactions',
-        ["uid","==",user.uid],
+        _query,
         ['createdAt','asc']
         )
         console.log(`user : ${user}, error : ${authError}, getData : ${getData}`);

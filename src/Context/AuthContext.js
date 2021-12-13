@@ -34,13 +34,14 @@ export function AuthProvider({ children }) {
   //   dispatch({ type: "LOGIN", payload: user });
   // };
   useEffect(() => {
-    (function unsub() {
-      const unsub = projectAuth.onAuthStateChanged((user) => {
+    const unsub = projectAuth.onAuthStateChanged((user) => {
+      if (user) {
         dispatch({ type: "AUTH_IS_READY", payload: user });
-        console.log(`user user is : ${user}`);
-      });
-      unsub();
-    })();
+        console.log(`user user is : ${user.displayName}`);
+        unsub();
+      }
+    });
+
     // const unsub = projectAuth.onAuthStateChanged((user) => {
     //   dispatch({ type: "AUTH_IS_READY", payload: user });
 
