@@ -11,8 +11,6 @@ import { UseCollection } from '../../hooks/UseCollection';
 
 export default function home() {
     const { user, error:authError } = UseAuth();
-    console.log(`authError : ${authError}`);
-    console.log(authError);
     const _query = user ? ["uid","==",user.uid] : null;
     const{  getData, error } = UseCollection(
         'transactions',

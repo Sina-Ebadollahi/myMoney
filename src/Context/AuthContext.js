@@ -28,8 +28,6 @@ const authReducer = (state, action) => {
 };
 export function AuthProvider({ children }) {
   const [state, dispatch] = useReducer(authReducer, authInitialize);
-  console.log(` state user : ${state.user}`);
-  console.log(state);
   // const loginAction = (user) => {
   //   dispatch({ type: "LOGIN", payload: user });
   // };
@@ -37,7 +35,6 @@ export function AuthProvider({ children }) {
     const unsub = projectAuth.onAuthStateChanged((user) => {
       if (user) {
         dispatch({ type: "AUTH_IS_READY", payload: user });
-        console.log(`user user is : ${user.displayName}`);
         unsub();
       }
     });
